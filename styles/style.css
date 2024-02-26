@@ -172,7 +172,7 @@
 }
 
 .card__image-perfectionism {
-  filter: invert(1);
+  filter: hue-rotate(-20deg);
   object-fit: fill;
 }
 
