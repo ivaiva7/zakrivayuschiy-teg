@@ -12,3 +12,113 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+.main-body {
+  fill: transparent;
+  transition-delay: 0.02s;
+  transition-duration: 0.3s;
+}
+
+.contour {
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+  fill: transparent;
+}
+
+.like-icon:hover .main-body {
+  transition: fill 0.3s linear 0.05s;
+  fill: var(--contour-color);
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+}
+
+.like-icon:active .main-body {
+  transition: fill 0.3s linear 0.08s;
+  fill: var(--main-body-color);
+}
+
+.like-icon:active .core {
+  fill: var(--main-body-color);
+}
+
+.like-icon:active .contour {
+  transition: fill 0.3s linear 0.08s;
+  fill: var(--main-body-color);
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: 0 0;
+  transform-box: fill-box;
+  animation: scaleup 0.3s 1 alternate ease-in 0.18s;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s linear 0.08s;
+  fill: var(--main-body-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s linear 0.08s;
+  fill: var(--main-body-color);
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s linear 0.08s;
+  fill: var(--main-body-color);
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s 1 alternate ease-in 0.3s;
+}
+
+
+@keyframes arrow {
+  from {
+    inset-inline-start: -18px;
+  }
+
+  to {
+    inset-inline-start: -14px;
+  }
+}
+
+@keyframes scaleup {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: translate(-25%, 0) scale(1.5);
+  }
+}
+
+@keyframes sparks {
+  0% {
+    fill: transparent;
+  }
+
+  25% {
+    --main-body-color: rgba(255, 0, 0, 0.25);
+    fill: var(--main-body-color);
+  }
+
+  50% {
+    --main-body-color: rgba(255, 0, 0, 0.5);
+    fill: var(--main-body-color);
+  }
+
+  75% {
+    --main-body-color: rgba(255, 0, 0, 0.75);
+    fill: var(--main-body-color);
+  }
+
+  100% {
+    --main-body-color: rgba(255, 0, 0, 1);
+    fill: var(--main-body-color);
+  }
+}
