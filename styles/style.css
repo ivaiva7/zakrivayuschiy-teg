@@ -207,7 +207,8 @@
 
 .card__text {
   padding: 25px;
-  line-height: 1.315;
+  line-height: 1.167;
+  font-size: 18px;
 }
 
 .card__text:last-of-type {
@@ -516,8 +517,8 @@
   }
 
   .dialog__image {
-    width: 45px;
-    height: 45px;
+    width: 38px;
+    height: 38px;
     grid-column: 1 / span 2;
 
   }
